@@ -3,9 +3,9 @@
 #include <string.h>
 const int N = 8;
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   char filename[10];
-  FILE* file;
+  FILE *file;
   int i, j;
   char a[N + 1][N + 1];
 
@@ -14,7 +14,8 @@ int main(int argc, char* argv[]) {
   }
 
   file = fopen(filename, "r");
-  if (!file) printf("Error\n");
+  if (!file)
+    printf("Error\n");
 
   fread(a, sizeof(a), 1, file);
 
@@ -24,4 +25,5 @@ int main(int argc, char* argv[]) {
       printf("%c", a[i][j]);
     }
   }
+  return 0;
 }
