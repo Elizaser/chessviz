@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
   char filename[10];
   FILE* file;
   int i, j;
-  char a[N][N + 1];
+  char a[N + 1][N + 1];
 
   if (argc > 1) {
     strcpy(filename, argv[1]);
@@ -19,8 +19,9 @@ int main(int argc, char* argv[]) {
   fread(a, sizeof(a), 1, file);
 
   fclose(file);
-
-  for (i = 0; i < N; i++) {
-    for (j = 0; j < N + 1; j++) printf("%c", a[i][j]);
+  for (i = 0; i < N + 1; i++) {
+    for (j = 0; j < N + 1; j++) {
+      printf("%c", a[i][j]);
+    }
   }
 }
