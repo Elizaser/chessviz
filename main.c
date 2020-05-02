@@ -175,3 +175,5 @@ int main(int argc, char* argv[])
 	// fgets(buffer, 7, stdin); // fputs(buffer,stdout); 
 	return 0;
 }
+
+
