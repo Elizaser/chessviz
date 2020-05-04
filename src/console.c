@@ -1,7 +1,15 @@
-#include <stdio.h>
+#include "printb.h"
+#include "console.h"
 #include <string.h>
-const int N=8, M=9;
-
+#include <stdio.h> 
+extern const int N, M;
+int swap( char *a, char *b )
+{
+	char  tmp = *a;
+	*a = *b;  
+	*b = tmp;
+	return 0;
+}
 int f(char char_number)
 {  
 	int int_number;
@@ -52,21 +60,12 @@ int f(char char_number)
 		case 'h':
 			int_number=7;
 			return int_number;
-			break;
-	} return 0;
-	else return 1;
-}
-
-
-
-int swap( char *a, char *b )
-{
-	char  tmp = *a;
-	*a = *b;  
-	*b = tmp;
-	return 0;
-}
-
+		default: 
+		{
+			return -1;	
+		}
+	}  
+} 
 int check_hod(char a[][M], int N, int M, char *hod)
 {  
 	if( (strlen(hod)>7) || (f(hod[1]) == -1) || (f(hod[4]) == -1)||
@@ -79,42 +78,32 @@ int check_hod(char a[][M], int N, int M, char *hod)
 	return 1;
 
 }
-void  printb(char a[][M], int N, int M)
-{
-	int i,j;
-	printf("   a b c d e f g h\n");
-	for (i = 0; i < N; i++) 
-	{
-		printf("\n%d ",i+1);
-		for ( j = 0; j < M; j++) 
-		{
-			printf("%2c", a[i][j]);
-		}
-	}
-	printf("\n");
-}
-
 int hod_p( char a[][M], int i, int j, int k, int l)
 {
 	if(a[i][j] == 'p')
 	{
 		if (i==1)
 		{
-
 			if( ( (i+1 == k)||(i+2 == k) )&&(j==l) ) // если ход на 1 шаг вперед 
 			{	
-				printf("\n asdsf\n");
 				swap( &a[i][j],&a[k][l] );
 			}	
 		}
-		else if( (i+1 == k)&&(j==l) ) // если ход на 1 шаг вперед 
+		else 
+		{
+			if( (i+1 == k)&&(j==l) ) // если ход на 1 шаг вперед 
 			 {	
-				printf("\n asdsf\n");
 				swap( &a[i][j],&a[k][l] );
 			 } 
-	}	return 0;
-	else return 1;
-}
+		}
+		return 0;
+	}
+	else
+	{
+		return 1;
+	} 
+} 
+
 int console(char a[][M], int N, int M)
 {
 	char hod[7];
@@ -123,7 +112,7 @@ int console(char a[][M], int N, int M)
 	int p =0;
 	while(strncmp(hod, "exit", 4) != 0)
 	{
-		scanf("%c", &hod);
+		scanf("%s", hod);
 		if (strncmp(hod, "exit", 4) == 0) break;
 		if(check_hod(a, N, M, hod) == 0) printf("ERROR_COMMAND\n");
 		if(check_hod(a, N, M, hod)==1)
@@ -137,41 +126,9 @@ int console(char a[][M], int N, int M)
 					printf("\np = %d\n", p);
 					break;
 			}
-
-			// delay(50);
-			system("clear");
+			printf("\E[H\E[J");
 			printb(a, N, M);
 		} 
 	}
 	return 0;	
-}
-
-
-int main(int argc, char* argv[]) 
-{
-	FILE *file;
-
-	if (!(file = fopen(argv[1], "r"))) 
-	{
-		printf("ERROR INPUT FILE\n");
-		return -1;
-	}
-
-	char a[N][M];
-	char buffer[12];
-	int i = 0;
-	while (fgets(buffer, 12, file)) 
-	{
-		strcpy(a[i], buffer);
-		i++;
-	}
-
-	// printb(a,N,M);
-
-	fclose(file);
-	console(a, N, M);
-
-
-	// fgets(buffer, 7, stdin); // fputs(buffer,stdout); 
-	return 0;
 }
