@@ -1,2 +1,2 @@
 # chessviz
-https://travis-ci.com/Elizaser/chessviz.svg?branch=master
+[![Build Status](https://travis-ci.com/Elizaser/chessviz.svg?branch=master)](https://travis-ci.com/Elizaser/chessviz)
