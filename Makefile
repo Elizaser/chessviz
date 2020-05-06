@@ -7,18 +7,18 @@ SRC=src/
 
 
 BUILD = build/
-OBJECTS = $(BUILD)printb.o $(BUILD)console.o $(BUILD)main.o 
+OBJECTS = $(BUILD)printb.o  $(BUILD)console.o $(BUILD)main.o 
 
 BIN = bin/
 EXE = $(BIN)main
 
-.PHONY: all default
+.PHONY: all default clean
 all: bin build default 
 default: $(EXE)
 
 $(EXE): $(OBJECTS)
 	$(CC) $(FLAGS)  $(OBJECTS) -o $@ 
-$(BUILD)main.o:  $(SRC)main.c  $(SRC)console.h  
+$(BUILD)main.o:  $(SRC)main.c   $(SRC)console.h  
 	$(CC) $(CFLAGS) $(SRC)main.c -o $@
 $(BUILD)printb.o: $(SRC)printb.c $(SRC)printb.h  
 	$(CC) $(CFLAGS) $(SRC)printb.c -o $@
