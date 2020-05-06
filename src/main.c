@@ -1,8 +1,3 @@
-// #include "f.h"
-// #include "swap.h"
-// #include "printb.h"
-// #include "check_hod.h"
-// #include "hod_p.h"
 #include "console.h"
 #include <string.h>
 #include <stdio.h>
