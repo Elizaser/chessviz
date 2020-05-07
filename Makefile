@@ -1,7 +1,7 @@
 CC = gcc
 
 CFLAGS = -Wall -Werror -c -MP -MMD -std=c99
-FLAGS= -Wall -Werror  -std=c99
+FLAGS= -Wall -Werror -std=c99
 
 SRC=src/
 
