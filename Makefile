@@ -13,7 +13,7 @@ BIN = bin/
 EXE = $(BIN)main
 
 .PHONY: all default clean
-all: bin build default 
+all: bin build default run
 default: $(EXE)
 
 $(EXE): $(OBJECTS)
@@ -22,7 +22,7 @@ $(BUILD)main.o:  $(SRC)main.c   $(SRC)console.h
 	$(CC) $(CFLAGS) $(SRC)main.c -o $@
 $(BUILD)printb.o: $(SRC)printb.c $(SRC)printb.h  
 	$(CC) $(CFLAGS) $(SRC)printb.c -o $@
-$(BUILD)console.o:$(SRC)console.c $(SRC)printb.h  $(SRC)console.h  
+$(BUILD)console.o:  $(SRC)printb.h $(SRC)console.c   $(SRC)console.h  
 	$(CC) $(CFLAGS) $(SRC)console.c -o $@
 bin:
 	mkdir bin 
