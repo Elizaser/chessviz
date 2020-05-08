@@ -3,11 +3,9 @@
 #include "console.h"
 const int N = 8, M = 9;
 
-int main(int argc, char* argv[]) 
-{
+int main(int argc, char* argv[]) {
   FILE* file;
-  if (!(file = fopen(argv[1], "r")))
-  {
+  if (!(file = fopen(argv[1], "r"))) {
     printf("ERROR INPUT FILE\n");
     return -1;
   }
@@ -15,8 +13,7 @@ int main(int argc, char* argv[])
   char a[N][M];
   char buffer[12];
   int i = 0;
-  while (fgets(buffer, 12, file)) 
-  {
+  while (fgets(buffer, 12, file)) {
     strcpy(a[i], buffer);
     i++;
   }
