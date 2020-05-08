@@ -88,8 +88,7 @@ int hod_pw(char a[][M], int i, int j, int k, int l)
       swap(&a[i][j], &a[k][l]);
       return 0;
     }
-  } 
-  else 
+  } else 
   {
     if (i + 1 == k && j == l)  // если ход на 1 шаг вперед
     {
@@ -109,8 +108,7 @@ int hod_pb(char a[][M], int i, int j, int k, int l)
       swap(&a[i][j], &a[k][l]);
       return 0;
     }
-} 
-else 
+} else 
 {
     if (i - 1 == k && j == l)  // если ход на 1 шаг вперед
     {
@@ -200,8 +198,7 @@ int console(char a[][M], int N, int M)
         //      }
         // }
 
-      } 
-      else 
+      } else 
       {
         switch (hod[0]) 
         {
