@@ -1,5 +1,4 @@
 #include "printb.h"
-#include "console.h"
 #include <stdio.h>
 #include <string.h>
 extern const int N, M;
