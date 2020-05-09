@@ -13,7 +13,7 @@ BIN = bin/
 EXE = $(BIN)main
 
 .PHONY: all default clean
-all: bin build default run
+all: bin build default 
 default: $(EXE)
 
 $(EXE): $(OBJECTS)
