@@ -1,7 +1,7 @@
+#include "printb.h"
 #include "console.h"
 #include <stdio.h>
 #include <string.h>
-#include "printb.h"
 extern const int N, M;
 
 int swap(char* a, char* b) {
