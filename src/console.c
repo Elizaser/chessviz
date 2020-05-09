@@ -69,7 +69,9 @@ int f(char char_number)
 }
 int check_hod(char a[][M], int N, int M, char* hod)
 {
-    if ((strlen(hod) > 7) || (f(hod[1]) == -1) || (f(hod[4]) == -1) || (hod[2] < '0') || (hod[2] > '8') || (hod[5] < '0') || (hod[5] > '8')) {
+    if ((strlen(hod) > 7) || (f(hod[1]) == -1) || (f(hod[4]) == -1) 
+        || (hod[2] < '0') || (hod[2] > '8') || (hod[5] < '0') 
+        || (hod[5] > '8')) {
         return 0;
     }
 
@@ -194,7 +196,8 @@ int console(char a[][M], int N, int M)
             printf(" hod_pw(a, i, j, k, l) = %d\n", hod_pw(a, i, j, k, l));
             printf(" hod_l(a, i, j, k, l) = %d\n", hod_l(a, i, j, k, l));
 
-            if (hod_pb(a, i, j, k, l) == 0 || hod_pw(a, i, j, k, l) == 0 || hod_l(a, i, j, k, l) == 0) {
+            if (hod_pb(a, i, j, k, l) == 0 || hod_pw(a, i, j, k, l) == 0 
+                || hod_l(a, i, j, k, l) == 0) {
                 flag = 1 - flag;
             }
         }
