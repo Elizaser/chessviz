@@ -61,7 +61,12 @@ int swap(char* a, char* b)
 
 int eat(char* a, char* b)
 {
-    if ((walking == 1 && (*b == 'P' || *b == 'R' || *b == 'N' || *b == 'B' || *b == 'Q' || *b == 'K')) || (walking == 0 && (*b == 'p' || *b == 'r' || *b == 'n' || *b == 'b' || *b == 'q' || *b == 'k'))) {
+    if ((walking == 1 
+        && (*b == 'P' || *b == 'R' || *b == 'N' || *b == 'B' || *b == 'Q' 
+            || *b == 'K')) 
+        || (walking == 0 
+            && (*b == 'p' || *b == 'r' || *b == 'n' || *b == 'b' || *b == 'q' 
+                || *b == 'k'))) {
         char tmp = *a;
         *a = ' ';
         *b = tmp;
@@ -141,7 +146,7 @@ int move_p_w(char a[][M], char move[7], int i, int j, int k, int l)
 {
     if (a[i][j] == 'p') {
         if (i == 1) {
-            if ((i + 1 == k || i + 2 == k) && (j == l)) // если ход на 1 шаг вперед
+            if ((i + 1 == k || i + 2 == k) && (j == l)) 
             {
                 if (move[3] == '-' && a[k][l] == ' ') {
                     if (check_place_r_q_p_k(a, i, j, k, l) == 0)
@@ -149,7 +154,7 @@ int move_p_w(char a[][M], char move[7], int i, int j, int k, int l)
                 }
             }
         } else {
-            if (i + 1 == k && j == l) // если ход на 1 шаг вперед
+            if (i + 1 == k && j == l) 
             {
                 if (move[3] == '-' && a[k][l] == ' ')
                     swap(&a[i][j], &a[k][l]);
@@ -162,10 +167,9 @@ int move_p_w(char a[][M], char move[7], int i, int j, int k, int l)
 }
 int move_p_b(char a[][M], char move[7], int i, int j, int k, int l)
 {
-    // printf("i = %d", i);
     if (a[i][j] == 'P') {
         if (i == 6) {
-            if ((i - 1 == k || i - 2 == k) && (j == l)) // если ход на 1 шаг вперед
+            if ((i - 1 == k || i - 2 == k) && (j == l)) 
             {
                 if (move[3] == '-' && a[k][l] == ' ') {
                     if (check_place_r_q_p_k(a, i, j, k, l) == 0)
@@ -189,7 +193,6 @@ int move_p_b(char a[][M], char move[7], int i, int j, int k, int l)
 int move_r_w(char a[N][M], char move[7], int i, int j, int k, int l)
 {
     //ладья
-    // int i1, j1;
     if (a[i][j] == 'r') {
         if (i == k || j == l) {
             if (move[3] == '-' && a[k][l] == ' ') {
@@ -299,12 +302,18 @@ int move_q_w(char a[N][M], char move[7], int i, int j, int k, int l)
     if (a[i][j] == 'q') {
         if (abs(i - k) == abs(j - l) || i == k || j == l) {
             if (move[3] == '-' && a[k][l] == ' ') {
-                if (((i == k || j == l) && check_place_r_q_p_k(a, i, j, k, l) == 0)
-                    || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0))
+                if (((i == k || j == l) 
+                    && check_place_r_q_p_k(a, i, j, k, l) == 0)
+                    || (i != k && j != l 
+                        && check_place_b_q_k_p(a, i, j, k, l) == 0))
                     swap(&a[i][j], &a[k][l]);
             }
             if (move[3] == 'x') {
-                if (a[k][l] != ' ' && (((i == k || j == l) && check_place_r_q_p_k(a, i, j, k, l) == 0) || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0)))
+                if (a[k][l] != ' ' 
+                    && (((i == k || j == l) 
+                        && check_place_r_q_p_k(a, i, j, k, l) == 0) 
+                    || (i != k && j != l 
+                        && check_place_b_q_k_p(a, i, j, k, l) == 0)))
                     eat(&a[i][j], &a[k][l]);
             }
         }
@@ -317,12 +326,17 @@ int move_q_b(char a[N][M], char move[7], int i, int j, int k, int l)
     if (a[i][j] == 'Q') {
         if (abs(i - k) == abs(j - l) || i == k || j == l) {
             if (move[3] == '-' && a[k][l] == ' ') {
-                if (((i == k || j == l) && check_place_r_q_p_k(a, i, j, k, l) == 0)
-                    || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0))
+                if (((i == k || j == l) 
+                    && check_place_r_q_p_k(a, i, j, k, l) == 0)
+                    || (i != k && j != l 
+                        && check_place_b_q_k_p(a, i, j, k, l) == 0))
                     swap(&a[i][j], &a[k][l]);
             }
             if (move[3] == 'x') {
-                if (a[k][l] != ' ' && (((i == k || j == l) && check_place_r_q_p_k(a, i, j, k, l) == 0) || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0)))
+                if (a[k][l] != ' ' 
+                    && (((i == k || j == l) 
+                        && check_place_r_q_p_k(a, i, j, k, l) == 0) 
+                    || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0)))
                     eat(&a[i][j], &a[k][l]);
             }
         }
@@ -335,12 +349,18 @@ int move_k_w(char a[N][M], char move[7], int i, int j, int k, int l)
     if (a[i][j] == 'k') {
         if (i + 1 == k || i - 1 == k || j + 1 == l || j - 1 == l) {
             if (move[3] == '-' && a[k][l] == ' ') {
-                if (((i == k || j == l) && check_place_r_q_p_k(a, i, j, k, l) == 0)
-                    || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0))
+                if (((i == k || j == l) 
+                    && check_place_r_q_p_k(a, i, j, k, l) == 0)
+                    || (i != k && j != l 
+                        && check_place_b_q_k_p(a, i, j, k, l) == 0))
                     swap(&a[i][j], &a[k][l]);
             }
             if (move[3] == 'x') {
-                if (a[k][l] != ' ' && (((i == k || j == l) && check_place_r_q_p_k(a, i, j, k, l) == 0) || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0)))
+                if (a[k][l] != ' ' 
+                    && (((i == k || j == l) 
+                        && check_place_r_q_p_k(a, i, j, k, l) == 0) 
+                    || (i != k && j != l 
+                        && check_place_b_q_k_p(a, i, j, k, l) == 0)))
                     eat(&a[i][j], &a[k][l]);
             }
         }
@@ -353,12 +373,18 @@ int move_k_b(char a[N][M], char move[7], int i, int j, int k, int l)
     if (a[i][j] == 'K') {
         if (i + 1 == k || i - 1 == k || j + 1 == l || j - 1 == l) {
             if (move[3] == '-' && a[k][l] == ' ') {
-                if (((i == k || j == l) && check_place_r_q_p_k(a, i, j, k, l) == 0)
-                    || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0))
+                if (((i == k || j == l) 
+                    && check_place_r_q_p_k(a, i, j, k, l) == 0)
+                    || (i != k && j != l 
+                        && check_place_b_q_k_p(a, i, j, k, l) == 0))
                     swap(&a[i][j], &a[k][l]);
             }
             if (move[3] == 'x') {
-                if (a[k][l] != ' ' && (((i == k || j == l) && check_place_r_q_p_k(a, i, j, k, l) == 0) || (i != k && j != l && check_place_b_q_k_p(a, i, j, k, l) == 0)))
+                if (a[k][l] != ' ' 
+                    && (((i == k || j == l) 
+                        && check_place_r_q_p_k(a, i, j, k, l) == 0) 
+                    || (i != k && j != l && 
+                        check_place_b_q_k_p(a, i, j, k, l) == 0)))
                     eat(&a[i][j], &a[k][l]);
             }
         }
