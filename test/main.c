@@ -5,7 +5,7 @@ const int N = 8, M = 9;
 
 CTEST(W_Peshka, Correct_p_forward)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'P';
     move[1] = 'e';
     move[2] = '2';
@@ -26,7 +26,7 @@ CTEST(W_Peshka, Correct_p_forward)
 
 CTEST(B_Peshka, Correct_p_forward)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'P';
     move[1] = 'e';
     move[2] = '7';
@@ -45,9 +45,9 @@ CTEST(B_Peshka, Correct_p_forward)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_Peshka, Correct_p_hack)
+CTEST(W_Peshka, Correct_p_hack)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'P';
     move[1] = 'e';
     move[2] = '2';
@@ -55,9 +55,9 @@ CTEST (W_Peshka, Correct_p_hack)
     move[4] = 'f';
     move[5] = '3';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j]=' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[1][4] = 'p';
     a[2][5] = 'P';
@@ -66,9 +66,9 @@ CTEST (W_Peshka, Correct_p_hack)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Peshka, Correct_p_hack)
+CTEST(B_Peshka, Correct_p_hack)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'P';
     move[1] = 'e';
     move[2] = '7';
@@ -76,9 +76,9 @@ CTEST (B_Peshka, Correct_p_hack)
     move[4] = 'f';
     move[5] = '6';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[6][4] = 'P';
     a[5][5] = 'p';
@@ -87,9 +87,9 @@ CTEST (B_Peshka, Correct_p_hack)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_Rook, Correct_Rook_f)
+CTEST(W_Rook, Correct_Rook_f)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'R';
     move[1] = 'a';
     move[2] = '1';
@@ -97,9 +97,9 @@ CTEST (W_Rook, Correct_Rook_f)
     move[4] = 'a';
     move[5] = '3';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j]=' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][0] = 'r';
     a[2][0] = ' ';
@@ -108,9 +108,9 @@ CTEST (W_Rook, Correct_Rook_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Rook, Correct_Rook_f)
+CTEST(B_Rook, Correct_Rook_f)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'R';
     move[1] = 'a';
     move[2] = '8';
@@ -118,9 +118,9 @@ CTEST (B_Rook, Correct_Rook_f)
     move[4] = 'a';
     move[5] = '6';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j]=' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][0] = 'R';
     a[5][0] = ' ';
@@ -129,9 +129,9 @@ CTEST (B_Rook, Correct_Rook_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_Rook, Correct_Rook_h)
+CTEST(W_Rook, Correct_Rook_h)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'R';
     move[1] = 'a';
     move[2] = '1';
@@ -139,9 +139,9 @@ CTEST (W_Rook, Correct_Rook_h)
     move[4] = 'a';
     move[5] = '3';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j]=' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][0] = 'r';
     a[2][0] = 'R';
@@ -150,9 +150,9 @@ CTEST (W_Rook, Correct_Rook_h)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Rook, Correct_Rook_h)
+CTEST(B_Rook, Correct_Rook_h)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'R';
     move[1] = 'a';
     move[2] = '8';
@@ -160,9 +160,9 @@ CTEST (B_Rook, Correct_Rook_h)
     move[4] = 'a';
     move[5] = '6';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j]=' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][0] = 'R';
     a[5][0] = 'r';
@@ -171,51 +171,51 @@ CTEST (B_Rook, Correct_Rook_h)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Horse, Correct_Knight_f)
+CTEST(B_Horse, Correct_Knight_f)
 {
-    char move[6] ,  a[N][M];
-	move[0] = 'N';
-	move[1] = 'b';
-	move[2] = '1';
-	move[3] = '-';
-	move[4] = 'a';
-	move[5] = '3';
-	for( int i = 0; i < N; i++) {
-	for( int j = 0; j < M; j++) {
-	a[i][j]=' ';
-	}
-	}
-	a[0][1] = 'N';
-	a[2][0] = ' ';
+    char move[6], a[N][M];
+    move[0] = 'N';
+    move[1] = 'b';
+    move[2] = '1';
+    move[3] = '-';
+    move[4] = 'a';
+    move[5] = '3';
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
+    }
+    a[0][1] = 'N';
+    a[2][0] = ' ';
     int result = move_n_b(a, move, 0, 1, 2, 0);
     int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Horse, Correct_Knight_h)
+CTEST(B_Horse, Correct_Knight_h)
 {
-    char move[6] ,  a[N][M];
-	move[0] = 'N';
-	move[1] = 'b';
-	move[2] = '8';
-	move[3] = 'x';
-	move[4] = 'a';
-	move[5] = '6';
-	for( int i = 0; i < N; i++) {
-	for( int j = 0; j < M; j++) {
-	a[i][j]=' ';
-	}
-	}
-	a[7][1] = 'N';
-	a[5][0] = 'r';
+    char move[6], a[N][M];
+    move[0] = 'N';
+    move[1] = 'b';
+    move[2] = '8';
+    move[3] = 'x';
+    move[4] = 'a';
+    move[5] = '6';
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
+    }
+    a[7][1] = 'N';
+    a[5][0] = 'r';
     int result = move_n_b(a, move, 7, 1, 5, 0);
-	int expected = 0;
-	ASSERT_EQUAL(expected, result);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_Bishop, Correct_Bishop_f)
+CTEST(W_Bishop, Correct_Bishop_f)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'B';
     move[1] = 'c';
     move[2] = '1';
@@ -223,9 +223,9 @@ CTEST (W_Bishop, Correct_Bishop_f)
     move[4] = 'a';
     move[5] = '3';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][2] = 'b';
     a[2][0] = ' ';
@@ -234,9 +234,9 @@ CTEST (W_Bishop, Correct_Bishop_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Bishop, Correct_Bishop_h)
+CTEST(B_Bishop, Correct_Bishop_h)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'B';
     move[1] = 'c';
     move[2] = '8';
@@ -244,9 +244,9 @@ CTEST (B_Bishop, Correct_Bishop_h)
     move[4] = 'a';
     move[5] = '6';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][2] = 'B';
     a[5][0] = 'b';
@@ -255,9 +255,9 @@ CTEST (B_Bishop, Correct_Bishop_h)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_Queen, Correct_Queen_f)
+CTEST(W_Queen, Correct_Queen_f)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'Q';
     move[1] = 'd';
     move[2] = '1';
@@ -265,9 +265,9 @@ CTEST (W_Queen, Correct_Queen_f)
     move[4] = 'd';
     move[5] = '2';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][3] = 'q';
     a[1][3] = ' ';
@@ -276,9 +276,9 @@ CTEST (W_Queen, Correct_Queen_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Queen, Correct_Queen_h)
+CTEST(B_Queen, Correct_Queen_h)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'Q';
     move[1] = 'd';
     move[2] = '8';
@@ -286,9 +286,9 @@ CTEST (B_Queen, Correct_Queen_h)
     move[4] = 'd';
     move[5] = '2';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[4][7] = 'Q';
     a[4][3] = 'p';
@@ -297,9 +297,9 @@ CTEST (B_Queen, Correct_Queen_h)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_King, Correct_King_f)
+CTEST(W_King, Correct_King_f)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'K';
     move[1] = 'e';
     move[2] = '1';
@@ -307,9 +307,9 @@ CTEST (W_King, Correct_King_f)
     move[4] = 'e';
     move[5] = '2';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][4] = 'k';
     a[1][4] = ' ';
@@ -318,9 +318,9 @@ CTEST (W_King, Correct_King_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_King, Correct_King_h)
+CTEST(B_King, Correct_King_h)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'K';
     move[1] = 'e';
     move[2] = '8';
@@ -328,9 +328,9 @@ CTEST (B_King, Correct_King_h)
     move[4] = 'd';
     move[5] = '7';
     for (int i = 0; i < N; i++) {
-	for (int j=0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][4] = 'K';
     a[6][3] = 'n';
@@ -339,11 +339,11 @@ CTEST (B_King, Correct_King_h)
     ASSERT_EQUAL(expected, result);
 }
 
-//INCORRECT
+// INCORRECT
 
-CTEST (B_Peshka, InCorrect_p_forward)
+CTEST(B_Peshka, InCorrect_p_forward)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'P';
     move[1] = 'e';
     move[2] = '7';
@@ -351,9 +351,9 @@ CTEST (B_Peshka, InCorrect_p_forward)
     move[4] = 'e';
     move[5] = '6';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[6][4] = 'P';
     a[5][4] = 'p';
@@ -362,7 +362,7 @@ CTEST (B_Peshka, InCorrect_p_forward)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_Peshka, InCorrect_p_hack)
+CTEST(W_Peshka, InCorrect_p_hack)
 {
     char move[6], a[N][M];
     move[0] = 'P';
@@ -372,9 +372,9 @@ CTEST (W_Peshka, InCorrect_p_hack)
     move[4] = 'f';
     move[5] = '4';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[1][4] = 'p';
     a[3][5] = ' ';
@@ -383,10 +383,9 @@ CTEST (W_Peshka, InCorrect_p_hack)
     ASSERT_EQUAL(expected, result);
 }
 
-
-CTEST (W_Rook, InCorrect_Rook_f)
+CTEST(W_Rook, InCorrect_Rook_f)
 {
-    char move[6] , a[N][M];
+    char move[6], a[N][M];
     move[0] = 'R';
     move[1] = 'a';
     move[2] = '1';
@@ -394,9 +393,9 @@ CTEST (W_Rook, InCorrect_Rook_f)
     move[4] = 'a';
     move[5] = '3';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][0] = 'R';
     a[2][0] = 'n';
@@ -405,9 +404,9 @@ CTEST (W_Rook, InCorrect_Rook_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Rook, InCorrect_Rook_h)
+CTEST(B_Rook, InCorrect_Rook_h)
 {
-    char move[6] , a[N][M];
+    char move[6], a[N][M];
     move[0] = 'R';
     move[1] = 'a';
     move[2] = '8';
@@ -415,9 +414,9 @@ CTEST (B_Rook, InCorrect_Rook_h)
     move[4] = 'a';
     move[5] = '3';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][0] = 'R';
     a[3][0] = ' ';
@@ -426,9 +425,9 @@ CTEST (B_Rook, InCorrect_Rook_h)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_Horse, InCorrect_Knight_f)
+CTEST(W_Horse, InCorrect_Knight_f)
 {
-    char move[6] , a[N][M];
+    char move[6], a[N][M];
     move[0] = 'N';
     move[1] = 'b';
     move[2] = '1';
@@ -436,9 +435,9 @@ CTEST (W_Horse, InCorrect_Knight_f)
     move[4] = 'a';
     move[5] = '3';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][1] = 'n';
     a[2][0] = 'K';
@@ -447,9 +446,9 @@ CTEST (W_Horse, InCorrect_Knight_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Horse, InCorrect_Knight_h)
+CTEST(B_Horse, InCorrect_Knight_h)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'N';
     move[1] = 'b';
     move[2] = '8';
@@ -457,9 +456,9 @@ CTEST (B_Horse, InCorrect_Knight_h)
     move[4] = 'a';
     move[5] = '6';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][1] = 'N';
     a[5][0] = ' ';
@@ -468,11 +467,9 @@ CTEST (B_Horse, InCorrect_Knight_h)
     ASSERT_EQUAL(expected, result);
 }
 
-
-
-CTEST (W_Bishop, InCorrect_Bishop_f)
+CTEST(W_Bishop, InCorrect_Bishop_f)
 {
-    char move[6] , a[N][M];
+    char move[6], a[N][M];
     move[0] = 'B';
     move[1] = 'c';
     move[2] = '1';
@@ -480,9 +477,9 @@ CTEST (W_Bishop, InCorrect_Bishop_f)
     move[4] = 'a';
     move[5] = '3';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][2] = 'b';
     a[2][0] = ' ';
@@ -491,9 +488,9 @@ CTEST (W_Bishop, InCorrect_Bishop_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Bishop, InCorrect_Bishop_h)
+CTEST(B_Bishop, InCorrect_Bishop_h)
 {
-    char move[6] , a[N][M];
+    char move[6], a[N][M];
     move[0] = 'B';
     move[1] = 'c';
     move[2] = '8';
@@ -501,9 +498,9 @@ CTEST (B_Bishop, InCorrect_Bishop_h)
     move[4] = 'a';
     move[5] = '6';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][2] = 'B';
     a[5][0] = ' ';
@@ -512,9 +509,9 @@ CTEST (B_Bishop, InCorrect_Bishop_h)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_Queen, InCorrect_Queen_h)
+CTEST(B_Queen, InCorrect_Queen_h)
 {
-    char move[6] , a[N][M];
+    char move[6], a[N][M];
     move[0] = 'Q';
     move[1] = 'd';
     move[2] = '8';
@@ -522,9 +519,9 @@ CTEST (B_Queen, InCorrect_Queen_h)
     move[4] = 'd';
     move[5] = '2';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][3] = 'Q';
     a[1][3] = ' ';
@@ -533,9 +530,9 @@ CTEST (B_Queen, InCorrect_Queen_h)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_Queen, InCorrect_Queen_f)
+CTEST(W_Queen, InCorrect_Queen_f)
 {
-    char move[6] , a[N][M];
+    char move[6], a[N][M];
     move[0] = 'Q';
     move[1] = 'd';
     move[2] = '1';
@@ -543,9 +540,9 @@ CTEST (W_Queen, InCorrect_Queen_f)
     move[4] = 'd';
     move[5] = '2';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][3] = 'q';
     a[1][3] = 'K';
@@ -554,9 +551,9 @@ CTEST (W_Queen, InCorrect_Queen_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (W_King, InCorrect_King_f)
+CTEST(W_King, InCorrect_King_f)
 {
-    char move[6] , a[N][M];
+    char move[6], a[N][M];
     move[0] = 'K';
     move[1] = 'e';
     move[2] = '1';
@@ -564,9 +561,9 @@ CTEST (W_King, InCorrect_King_f)
     move[4] = 'd';
     move[5] = '2';
     for (int i = 0; i < N; i++) {
-	for (int j = 0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[0][4] = 'k';
     a[1][3] = 'K';
@@ -575,19 +572,19 @@ CTEST (W_King, InCorrect_King_f)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (B_King, InCorrect_King_h)
+CTEST(B_King, InCorrect_King_h)
 {
-    char move[6] ,  a[N][M];
+    char move[6], a[N][M];
     move[0] = 'K';
     move[1] = 'e';
     move[2] = '8';
     move[3] = 'x';
     move[4] = 'd';
     move[5] = '7';
-    for (int i=0; i < N; i++) {
-	for (int j=0; j < M; j++) {
-	    a[i][j] = ' ';
-	}
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            a[i][j] = ' ';
+        }
     }
     a[7][4] = 'K';
     a[6][3] = ' ';
@@ -595,8 +592,6 @@ CTEST (B_King, InCorrect_King_h)
     int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
-
-
 
 int main(int argc, const char** argv)
 {
