@@ -8,7 +8,7 @@ extern const int N, M;
 int walking = 1;
 int flag = 0;
 
-int check_place_r_q_p_k(char a[][M], int i, int j, int k, int l){
+int check_place_r_q_p_k(char a[][M], int i, int j, int k, int l) {
     while (i < k - 1) {
         if (a[++i][j] != ' ')
             return 1;
@@ -28,7 +28,7 @@ int check_place_r_q_p_k(char a[][M], int i, int j, int k, int l){
     return 0;
 }
 
-int check_place_b_q_k_p(char a[][M], int i, int j, int k, int l){
+int check_place_b_q_k_p(char a[][M], int i, int j, int k, int l) {
   while (i < k - 1 && j < l - 1) {
     if (a[++i][++j] != ' ')
       return 1;
@@ -56,7 +56,7 @@ void swap(char* a, char* b){
   flag = 1;
 }
 
-void eat(char* a, char* b){
+void eat(char* a, char* b) {
   if ((walking == 1 && (*b == 'P' || *b == 'R' || *b == 'N' || *b == 'B' ||
                         *b == 'Q' || *b == 'K')) ||
       (walking == 0 && (*b == 'p' || *b == 'r' || *b == 'n' || *b == 'b' ||
@@ -68,7 +68,7 @@ void eat(char* a, char* b){
   }
 }
 
-int f(char char_number){
+int f(char char_number) {
   int int_number;
   switch (char_number) {
 case '1':
