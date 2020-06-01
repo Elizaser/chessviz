@@ -1,5 +1,6 @@
 #ifndef ADD_H
 #define ADD_H
+#include "printb.h"
 extern const int N, M;
 void swap(char *a, char *b);
 void eat(char *a, char *b);
