@@ -8,8 +8,7 @@ extern const int N, M;
 int walking = 1;
 int flag = 0;
 
-int
-check_place_r_q_p_k(char a[][M], int i, int j, int k, int l)
+int check_place_r_q_p_k(char a[][M], int i, int j, int k, int l)
 {
   while (i < k - 1) {
     if (a[++i][j] != ' ')
@@ -30,8 +29,7 @@ check_place_r_q_p_k(char a[][M], int i, int j, int k, int l)
   return 0;
 }
 
-int
-check_place_b_q_k_p(char a[][M], int i, int j, int k, int l)
+int check_place_b_q_k_p(char a[][M], int i, int j, int k, int l)
 {
   while (i < k - 1 && j < l - 1) {
     if (a[++i][++j] != ' ')
@@ -53,8 +51,7 @@ check_place_b_q_k_p(char a[][M], int i, int j, int k, int l)
   return 0;
 }
 
-void
-swap(char* a, char* b)
+void swap(char* a, char* b)
 {
   char tmp = *a;
   *a = *b;
@@ -62,8 +59,7 @@ swap(char* a, char* b)
   flag = 1;
 }
 
-void
-eat(char* a, char* b)
+void eat(char* a, char* b)
 {
   if ((walking == 1 && (*b == 'P' || *b == 'R' || *b == 'N' || *b == 'B' ||
                         *b == 'Q' || *b == 'K')) ||
@@ -76,66 +72,62 @@ eat(char* a, char* b)
   }
 }
 
-int
-f(char char_number)
+int f(char char_number)
 {
   int int_number;
   switch (char_number) {
-    case '1':
-      int_number = 0;
-      return int_number;
-    case '2':
-      int_number = 1;
-      return int_number;
-    case '3':
-      int_number = 2;
-      return int_number;
-    case '4':
-      int_number = 3;
-      return int_number;
-    case '5':
-      int_number = 4;
-      return int_number;
-    case '6':
-      int_number = 5;
-      return int_number;
-    case '7':
-      int_number = 6;
-      return int_number;
-    case '8':
-      int_number = 7;
-      return int_number;
-    case 'a':
-      int_number = 0;
-      return int_number;
-    case 'b':
-      int_number = 1;
-      return int_number;
-    case 'c':
-      int_number = 2;
-      return int_number;
-    case 'd':
-      int_number = 3;
-      return int_number;
-    case 'e':
-      int_number = 4;
-      return int_number;
-    case 'f':
-      int_number = 5;
-      return int_number;
-    case 'g':
-      int_number = 6;
-      return int_number;
-    case 'h':
-      int_number = 7;
-      return int_number;
-    default: {
-      return -1;
-    }
+case '1':
+  int_number = 0;
+  return int_number;
+case '2':
+  int_number = 1;
+  return int_number;
+case '3':
+  int_number = 2;
+  return int_number;
+case '4':
+  int_number = 3;
+  return int_number;
+case '5':
+  int_number = 4;
+  return int_number;
+case '6':
+  int_number = 5;
+  return int_number;
+case '7':
+  int_number = 6;
+  return int_number;
+case '8':
+  int_number = 7;
+  return int_number;
+case 'a':
+  int_number = 0;
+  return int_number;
+case 'b':
+  int_number = 1;
+  return int_number;
+case 'c':
+  int_number = 2;
+  return int_number;
+case 'd':
+  int_number = 3;
+  return int_number;
+case 'e':
+  int_number = 4;
+  return int_number;
+case 'f':
+  int_number = 5;
+  return int_number;
+case 'g':
+  int_number = 6;
+  return int_number;
+case 'h':
+  int_number = 7;
+  return int_number;
+default: {return -1;}
   }
 }
-int
-check_move(char a[][M], char* move)
+int check_move(char a[][M], char* move)
 {
   if ((strlen(move) > 7) || (f(move[1]) == -1) || (f(move[4]) == -1) ||
       (move[2] < '0') || (move[2] > '8') || (move[5] < '0') ||
@@ -144,8 +136,7 @@ check_move(char a[][M], char* move)
   }
   return 1;
 }
-int
-move_p_w(char a[][M], char move[3], int i, int j, int k, int l)
+int move_p_w(char a[][M], char move[3], int i, int j, int k, int l)
 {
   if (a[i][j] == 'p') {
     if (i == 1) {
@@ -172,8 +163,7 @@ move_p_w(char a[][M], char move[3], int i, int j, int k, int l)
   }
   return 1;
 }
-int
-move_p_b(char a[][M], char move[3], int i, int j, int k, int l)
+int move_p_b(char a[][M], char move[3], int i, int j, int k, int l)
 {
   if (a[i][j] == 'P') {
     if (i == 6) {
@@ -202,8 +192,7 @@ move_p_b(char a[][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-move_r_w(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_r_w(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   //ладья
   if (a[i][j] == 'r') {
@@ -224,8 +213,7 @@ move_r_w(char a[N][M], char move[3], int i, int j, int k, int l)
   }
   return 1;
 }
-int
-move_r_b(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_r_b(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   //ладья
   if (a[i][j] == 'R') {
@@ -246,8 +234,7 @@ move_r_b(char a[N][M], char move[3], int i, int j, int k, int l)
   }
   return 1;
 }
-int
-move_n_w(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_n_w(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   //конь
   if (a[i][j] == 'n') {
@@ -270,8 +257,7 @@ move_n_w(char a[N][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-move_n_b(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_n_b(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   //конь
   if (a[i][j] == 'N') {
@@ -294,8 +280,7 @@ move_n_b(char a[N][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-move_b_w(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_b_w(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   if (a[i][j] == 'b') {
     if (abs(i - k) == abs(j - l)) {
@@ -316,8 +301,7 @@ move_b_w(char a[N][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-move_b_b(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_b_b(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   if (a[i][j] == 'B') {
     if (abs(i - k) == abs(j - l)) {
@@ -338,8 +322,7 @@ move_b_b(char a[N][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-move_q_w(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_q_w(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   if (a[i][j] == 'q') {
     if (abs(i - k) == abs(j - l) || i == k || j == l) {
@@ -363,8 +346,7 @@ move_q_w(char a[N][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-move_q_b(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_q_b(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   if (a[i][j] == 'Q') {
     if (abs(i - k) == abs(j - l) || i == k || j == l) {
@@ -388,8 +370,7 @@ move_q_b(char a[N][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-move_k_w(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_k_w(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   if (a[i][j] == 'k') {
     if (i + 1 == k || i - 1 == k || j + 1 == l || j - 1 == l) {
@@ -413,8 +394,7 @@ move_k_w(char a[N][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-move_k_b(char a[N][M], char move[3], int i, int j, int k, int l)
+int move_k_b(char a[N][M], char move[3], int i, int j, int k, int l)
 {
   if (a[i][j] == 'K') {
     if (i + 1 == k || i - 1 == k || j + 1 == l || j - 1 == l) {
@@ -438,8 +418,7 @@ move_k_b(char a[N][M], char move[3], int i, int j, int k, int l)
   return 1;
 }
 
-int
-console(char a[][M], int N, int M)
+int console(char a[][M], int N, int M)
 {
   char move[7];
 
