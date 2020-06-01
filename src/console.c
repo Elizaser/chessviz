@@ -1,5 +1,5 @@
-#include "printb.h"
 #include "console.h"
+#include "printb.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
