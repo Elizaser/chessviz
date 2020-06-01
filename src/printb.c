@@ -1,6 +1,7 @@
 #include "printb.h"
 #include <stdio.h>
-void printb(char a[][M], int N, int M)
+extern const int N, M;
+void printb(char a[][M])
 {
     int i, j;
     printf("   a b c d e f g h\n");

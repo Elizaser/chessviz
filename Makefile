@@ -5,11 +5,10 @@ FLAGS= -Wall -Werror -std=c99
 
 SRC=src/
 
-
 BUILD = build/
 DIRT=buildt/
 OBJECTS = $(BUILD)printb.o  $(BUILD)console.o $(BUILD)main.o 
-OBJECTS_TEST=$(DIRT)main_test.o
+OBJECTS_TEST = $(DIRT)printb.o $(DIRT)console.o $(DIRT)main_test.o 
 
 BIN = bin/
 EXE = $(BIN)main
@@ -29,8 +28,12 @@ $(BUILD)console.o:  $(SRC)printb.h $(SRC)console.c   $(SRC)console.h
 	$(CC) $(CFLAGS) $(SRC)console.c -o $@
 $(BIN)main_test: $(OBJECTS_TEST)
 	$(CC) $(FLAGS) $(OBJECTS_TEST) -o $@
-$(DIRT)main_test.o: test/main.c thirdparty/ctest.h  
+$(DIRT)main_test.o: test/main.c thirdparty/ctest.h  $(SRC)console.h  
 	$(CC) $(CFLAGS) -I thirdparty -I src -c test/main.c -o $@
+$(DIRT)printb.o: $(SRC)printb.c $(SRC)printb.h  
+	$(CC) $(CFLAGS) $(SRC)printb.c -o $@
+$(DIRT)console.o: $(SRC)printb.h $(SRC)console.c $(SRC)console.h 
+	$(CC) $(CFLAGS) $(SRC)console.c -o $@
 
 bin:
 	mkdir bin 
