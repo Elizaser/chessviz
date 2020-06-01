@@ -10,40 +10,32 @@ int flag = 0;
 
 int check_place_r_q_p_k(char a[][M], int i, int j, int k, int l) {
   while (i < k - 1) {
-    if (a[++i][j] != ' ')
-      return 1;
+    if (a[++i][j] != ' ') return 1;
   }
   while (i > k + 1) {
-    if (a[--i][j] != ' ')
-      return 1;
+    if (a[--i][j] != ' ') return 1;
   }
   while (j < l - 1) {
-    if (a[i][++j] != ' ')
-      return 1;
+    if (a[i][++j] != ' ') return 1;
   }
   while (j > l + 1) {
-    if (a[i][--j] != ' ')
-      return 1;
+    if (a[i][--j] != ' ') return 1;
   }
   return 0;
 }
 
 int check_place_b_q_k_p(char a[][M], int i, int j, int k, int l) {
   while (i < k - 1 && j < l - 1) {
-    if (a[++i][++j] != ' ')
-      return 1;
+    if (a[++i][++j] != ' ') return 1;
   }
   while (i < k - 1 && j > l + 1) {
-    if (a[++i][--j] != ' ')
-      return 1;
+    if (a[++i][--j] != ' ') return 1;
   }
   while (i > k + 1 && j < l - 1) {
-    if (a[--i][++j] != ' ')
-      return 1;
+    if (a[--i][++j] != ' ') return 1;
   }
   while (i > k + 1 && j > l + 1) {
-    if (a[--i][--j] != ' ')
-      return 1;
+    if (a[--i][--j] != ' ') return 1;
   }
 
   return 0;
@@ -410,10 +402,8 @@ int console(char a[][M], int N, int M) {
     } else
       printf("Ход Черного: ");
     scanf("%s", move);
-    if (strncmp(move, "exit", 4) == 0)
-      break;
-    if (check_move(a, move) == 0)
-      printf("ERROR_COMMAND\n");
+    if (strncmp(move, "exit", 4) == 0) break;
+    if (check_move(a, move) == 0) printf("ERROR_COMMAND\n");
     if (check_move(a, move)) {
       int i = f(move[2]), j = f(move[1]);
       int k = f(move[5]), l = f(move[4]);
